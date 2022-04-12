@@ -1,0 +1,41 @@
+.matchList {
+  background-color: rgba(255, 255, 255, 0.09);
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  overflow: auto;
+}
+.match {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+.matchTimeAgo {
+  opacity: 0.4;
+  margin-left: auto;
+}
+
+.matchResult {
+  text-align: center;
+  width: 50px;
+}
+
+.WIN {
+  color: green;
+}
+
+.INIT {
+  color: gray
+}
+.WIN {
+  color: green
+}
+.LOSS {
+  color: red
+}
+.DRAW {
+  color: orange
+}

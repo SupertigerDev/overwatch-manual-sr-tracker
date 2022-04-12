@@ -1,0 +1,36 @@
+.roleTabs {
+  display: flex;
+  gap: 1px;
+  margin: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  align-self: flex-start;
+}
+.tab {
+  position: relative;
+  display: flex;
+  background-color: #1e222a;
+  overflow: hidden;
+  cursor: pointer;
+}
+.tabTitle {
+  margin: 15px;
+  color: #eaeaea;
+  user-select: none;
+}
+.tab:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: 0.2s;
+}
+.tab:hover:after {
+  box-shadow: 0px 0px 20px 12px #f8b1304a;
+  height: 0;
+}
+.tab[selected]:after {
+  height: 3px;
+  background-color: #f8b130;
+  box-shadow: 0px 0px 20px 12px #f8b1304a;
+}
