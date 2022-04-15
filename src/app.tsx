@@ -1,10 +1,10 @@
 import Button from "./components/Button";
 import RoleTabs from "./components/RoleTabs";
-import {IoIosAddCircleOutline} from 'react-icons/io';
 import AddModal from "./components/AddModal";
 import { useEffect, useState } from "preact/hooks";
 import { getRoleMatches, Match, MatchRoles } from "./database";
 import MatchList from "./components/MatchList";
+import Icons from "./components/Icons";
 
 export function App() {
   const [showModal, setShowModal] = useState(false);
@@ -21,7 +21,7 @@ export function App() {
       <Button 
         styles={{marginLeft: '20px'}} 
         title="Add" color="#2B92E1" 
-        icon={<IoIosAddCircleOutline size={25} color='white' />}
+        icon={<Icons name="add" />}
         onClick={() => setShowModal(true)}        
       />
       <MatchList matches={matches}/>

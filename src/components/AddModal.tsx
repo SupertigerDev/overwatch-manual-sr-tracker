@@ -1,11 +1,10 @@
 import styles from './AddModal.module.css';
 import Button from './Button';
 import RoleTabs from './RoleTabs';
-import {IoIosAddCircleOutline} from 'react-icons/io';
-import {MdOutlineCancel} from 'react-icons/md';
 import InputBox from './InputBox';
 import { useEffect, useState } from 'preact/hooks';
 import { addMatch, lastSR, MatchRoles } from '../database';
+import Icons from './Icons';
 
 interface Props {
   show: boolean;
@@ -47,13 +46,13 @@ export default function AddModal(props: Props) {
             title='Cancel'
             color="#f54242"
             onClick={props.onCancelClicked}
-            icon={<MdOutlineCancel size={25} color='white' /> }
+            icon={<Icons name="cancel" />}
           />
           <Button 
             title='Add'
             color="#2B92E1"
             onClick={onAddClicked}
-            icon={<IoIosAddCircleOutline size={25} color='white'/> }
+            icon={<Icons name="add" />}
           />
         </div>
       </div>
