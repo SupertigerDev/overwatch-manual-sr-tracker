@@ -2,7 +2,7 @@ import Button from "./components/Button";
 import RoleTabs from "./components/RoleTabs";
 import AddModal from "./components/AddModal";
 import { useEffect, useState } from "preact/hooks";
-import { getRoleMatches, Match, MatchRoles } from "./database";
+import { deleteMatch, getRoleMatches, Match, MatchRoles } from "./database";
 import MatchList from "./components/MatchList";
 import Icons from "./components/Icons";
 
@@ -15,6 +15,12 @@ export function App() {
     if (showModal) return;
     setMatches(getRoleMatches(selectedRole));
   }, [selectedRole, showModal])
+
+  const deleteClicked = (index: number) => {
+    deleteMatch(selectedRole, index);
+    setMatches(getRoleMatches(selectedRole));
+  }
+  
   return (
     <>
       <RoleTabs defaultSelectedRole={selectedRole} onRoleClicked={setSelectedRole} />
@@ -24,7 +30,7 @@ export function App() {
         icon={<Icons name="add" />}
         onClick={() => setShowModal(true)}        
       />
-      <MatchList matches={matches}/>
+      <MatchList matches={matches} deleteClicked={deleteClicked} />
       <AddModal defaultRole={selectedRole} onCancelClicked={() => setShowModal(false)} show={showModal} />
     </>
   )

@@ -35,6 +35,12 @@ export function addMatch(sr: number, role: MatchRoles) {
   localStorage[role] = JSON.stringify(matches);
 }
 
+export function deleteMatch(role: MatchRoles, index: number) {
+  const matches = getRoleMatches(role);
+  matches.splice(index, 1);
+  localStorage[role] = JSON.stringify(matches);
+}
+
 function matchSrDifference(newSR: number, role: MatchRoles) {
   const matches = getRoleMatches(role);
   const matchSr = newSR;

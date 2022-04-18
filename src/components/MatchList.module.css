@@ -22,6 +22,11 @@
   text-align: center;
   width: 50px;
 }
+.deleteButton {
+  color: red;
+  cursor: pointer; 
+  margin-left: 5px;
+}
 
 .WIN {
   color: green;
@@ -39,3 +44,4 @@
 .DRAW {
   color: orange
 }
+
