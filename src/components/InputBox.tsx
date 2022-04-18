@@ -7,6 +7,6 @@ interface Props {
 export default function InputBox(props: Props) {
   return <div className={styles.inputBox}>
     <div className={styles.title}>{props.title}:</div>
-    <input className={styles.input} value={props.value} onChange={(e: any) => props.onInput(e.target.value)} />
+    <input inputMode="numeric" className={styles.input} value={props.value} onChange={(e: any) => props.onInput(e.target.value)} />
   </div>
 }
